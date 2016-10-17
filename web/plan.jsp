@@ -21,7 +21,7 @@
 <form action="plan_write.jsp">
 	<input type="hidden" name="course_id" value="<%= course_id %>">
 
-	<table id="entire" width="550" border="1">
+	<table id="plan" width="550" border="1">
 		<tbody align="center">
 		<%
 			if (courseList != null) {
