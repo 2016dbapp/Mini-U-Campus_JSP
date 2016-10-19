@@ -7,9 +7,11 @@
 
 	Course course = new Course();
 
+	// 전체 강의 목록 가져오기
 	ArrayList<Course> courseList_entire = new ArrayList<Course>();
 	courseList_entire = course.get("COURSE", "ENTIRE");
 
+	// 수강 or 담당 강의 목록 가져오기
 	ArrayList<Course> courseList_take = new ArrayList<Course>();
 	courseList_take = course.get("COURSE", "TAKE", member_id);
 %>

@@ -26,8 +26,15 @@
 		resultSet = statement.executeQuery(query);
 
 		if (!resultSet.next()) {
-			query = "INSERT INTO takeInfo VALUES (\"" + member_id + "\", \"" + course_id + "\")";
-			result = statement.executeUpdate(query);
+			query = "SELECT seats FROM courseInfo WHERE course_id=\"" + course_id + "\"";
+			resultSet = statement.executeQuery(query);
+			resultSet.next();
+			int seats = resultSet.getInt("seats");
+
+			if (seats < 5) {
+				query = "INSERT INTO takeInfo VALUES (\"" + member_id + "\", \"" + course_id + "\")";
+				result = statement.executeUpdate(query);
+			}
 		}
 
 		if (result > 0) {
